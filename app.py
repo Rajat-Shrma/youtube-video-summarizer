@@ -2,11 +2,7 @@ import streamlit as st
 from youtube_transcript_api import YouTubeTranscriptApi as yt
 import google.generativeai as genai
 import textwrap
-from dotenv import load_dotenv
 import os
-load_dotenv()
-
-api_key = os.getenv("API_KEY")
 
 def get_video_id(url):
     if "v=" in url:
