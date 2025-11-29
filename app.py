@@ -1,5 +1,5 @@
 import streamlit as st
-from youtube_transcript_api import YouTubeTranscriptApi as yt
+from youtube_transcript_api import YouTubeTranscriptApi
 import google.generativeai as genai
 import textwrap
 import os
@@ -30,7 +30,7 @@ if url:
         with st.spinner("Fetching and summarizing transcript..."):
             try:
      
-                transcript = yt.get_transcript(video_id)
+                transcript = YouTubeTranscriptApi.get_transcript(video_id)
                 full_text = [dic['text'] for dic in transcript]
                 full_transcript = ' '.join(full_text)
 
