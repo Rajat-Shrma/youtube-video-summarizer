@@ -37,6 +37,10 @@ A powerful, user-friendly web application that automatically fetches YouTube vid
 - **Transcript API**: YouTube Transcript API
 - **Environment Management**: python-dotenv, pathlib
 
+## SCREEN SHOT OF WEB APP
+<img width="1028" height="869" alt="image" src="https://github.com/user-attachments/assets/bbb76c25-369e-4a6a-87cf-b5d5a478b725" />
+
+
 ### Dependencies
 
 ```
