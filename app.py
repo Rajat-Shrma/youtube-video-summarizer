@@ -30,12 +30,12 @@ if url:
         with st.spinner("Fetching and summarizing transcript..."):
             try:
      
-                transcript = YouTubeTranscriptApi.get_transcript(video_id)
-                full_text = [dic['text'] for dic in transcript]
+                transcript = YouTubeTranscriptApi().fetch(video_id)
+                full_text=[snippet.text for snippet in transcript]
                 full_transcript = ' '.join(full_text)
 
 
-                gemini_api_key = st.secrets["GEMINI_API_KEY"]
+                gemini_api_key = st.secrets["GOOGLE_API_KEY"]
 
 
                 genai.configure(api_key=gemini_api_key)
@@ -47,7 +47,7 @@ if url:
                     "response_mime_type": "text/plain",
                 }
                 model = genai.GenerativeModel(
-                    model_name="gemini-1.5-flash",
+                    model_name="gemini-2.5-flash",
                     generation_config=generation_config,
                 )
 
